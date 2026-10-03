@@ -271,7 +271,7 @@
             border-radius: 4px;
         }
 
-        /* Projects Grid (No Challenge/Solution) */
+        /* Projects Grid (Minimal Descriptions) */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -321,13 +321,13 @@
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--text-main);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
         .project-text {
             color: var(--text-muted);
             font-size: 0.85rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             flex-grow: 1;
         }
 
@@ -360,29 +360,29 @@
             text-decoration: underline;
         }
 
-        /* Compact Double Crossed Comic Section */
+        /* 5-Page Expanded Comic Section */
         .comic-box {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            padding: 1.2rem;
+            padding: 1.5rem;
             box-shadow: var(--shadow);
         }
 
-        .comic-viewer-small {
+        .comic-viewer-5page {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 0.8rem;
-            max-width: 600px; /* Reduced scale/view size */
-            margin: 1rem auto;
+            max-width: 1000px;
+            margin: 1.2rem auto;
             background: #090d16;
-            padding: 0.6rem;
+            padding: 0.8rem;
             border-radius: 8px;
             border: 1px solid var(--border-color);
         }
 
         .comic-slot {
-            height: 220px; /* Scaled down viewer height */
+            height: 280px;
             background: #1e293b;
             border-radius: 4px;
             overflow: hidden;
@@ -403,11 +403,11 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
         }
 
         .comic-page-num {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
         }
 
@@ -470,12 +470,13 @@
 
         @media (max-width: 992px) {
             .top-grid { grid-template-columns: 1fr; }
+            .comic-viewer-5page { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (max-width: 600px) {
             .hero-title { font-size: 2.2rem; }
-            .comic-viewer-small { grid-template-columns: 1fr; }
-            .comic-slot { height: 280px; }
+            .comic-viewer-5page { grid-template-columns: 1fr; }
+            .comic-slot { height: 320px; }
             .nav-links { display: none; }
         }
     </style>
@@ -508,19 +509,19 @@
                 <span><i class="fas fa-envelope"></i> missasiakhalid@gmail.com</span>
             </div>
             <p class="hero-bio">
-                Game developer and digital artist focused on shipping optimized, interactive gameplay across mobile, PC, VR, and web platforms. Experienced in Unity (C#), Cocos Creator (TypeScript), C++ programming, lightweight HTML5 playable ads, game architecture, and mobile performance optimization. Proficient in Blender 3D modeling, digital sketching, UI/UX design, and visual storytelling, with an award-recognized track record in game jams and national game expos[cite: 10].
+                Game developer and digital artist focused on shipping optimized, interactive gameplay across mobile, PC, VR, and web platforms. Experienced in Unity (C#), Cocos Creator (TypeScript), C++ programming, lightweight HTML5 playable ads, game architecture, and mobile performance optimization.
             </p>
             <div class="hero-btns">
-                <a href="https://behance.net/aasiakhalid" target="_blank" class="btn btn-primary"><i class="fab fa-behance"></i> Behance Portfolio[cite: 10]</a>
-                <a href="https://linkedin.com/in/aasia-k-981872ba" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn[cite: 10]</a>
-                <a href="mailto:missasiakhalid@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email[cite: 10]</a>
+                <a href="https://behance.net/aasiakhalid" target="_blank" class="btn btn-primary"><i class="fab fa-behance"></i> Behance Portfolio</a>
+                <a href="https://linkedin.com/in/aasia-k-981872ba" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:missasiakhalid@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
             </div>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Top 3 Compact Grid Sections (Experience, Education with BS & CGPA, Awards & Skills) -->
+        <!-- Top 3 Compact Grid Sections -->
         <section id="overview">
             <div class="top-grid">
                 
@@ -530,18 +531,18 @@
                         <h3><i class="fas fa-briefcase"></i> Experience</h3>
                         <div class="item-row">
                             <div class="item-head">Jr. Game Developer</div>
-                            <div class="item-sub">Invicttus | Jan 2026 – Present[cite: 10]</div>
-                            <div class="item-desc">Unity & Cocos Creator, C# & TypeScript optimization, Git workflows, playable ads, AppLovin deployment[cite: 10].</div>
+                            <div class="item-sub">Invicttus | Jan 2026 – Present</div>
+                            <div class="item-desc">Unity & Cocos Creator, C# & TypeScript optimization, Git workflows, playable ads, AppLovin deployment.</div>
                         </div>
                         <div class="item-row">
                             <div class="item-head">Digital Games Apprentice</div>
-                            <div class="item-sub">Mindstorm Studios | Jun 2024 – Aug 2024[cite: 10]</div>
-                            <div class="item-desc">Summer apprenticeship, game jam prototyping, Unity implementation, team collaboration[cite: 10].</div>
+                            <div class="item-sub">Mindstorm Studios | Jun 2024 – Aug 2024</div>
+                            <div class="item-desc">Summer apprenticeship, game jam prototyping, Unity implementation, team collaboration.</div>
                         </div>
                         <div class="item-row">
                             <div class="item-head">Jr. Game Artist</div>
-                            <div class="item-sub">Gameotivity | Jun 2023 – Sep 2023[cite: 10]</div>
-                            <div class="item-desc">2D character concept design, environment art, UI asset creation, startup visual identity[cite: 10].</div>
+                            <div class="item-sub">Gameotivity | Jun 2023 – Sep 2023</div>
+                            <div class="item-desc">2D character concept design, environment art, UI asset creation, startup visual identity.</div>
                         </div>
                     </div>
                 </div>
@@ -551,16 +552,16 @@
                     <div>
                         <h3><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
                         <div class="item-row">
-                            <div class="item-head">BS Computer Games Development <span class="badge-tag">3.25 CGPA</span>[cite: 10]</div>
-                            <div class="item-sub">Air University, Islamabad (2021–2025)[cite: 10]</div>
-                            <div class="item-desc">Unity, Unreal Engine, C++, C#, OOP, Data Structures, VR, AI Games, Computer Graphics, 3D/2D Art[cite: 10].</div>
+                            <div class="item-head">BS Computer Games Development <span class="badge-tag">3.25 CGPA</span></div>
+                            <div class="item-sub">Air University, Islamabad (2021–2025)</div>
+                            <div class="item-desc">Unity, Unreal Engine, C++, C#, OOP, Data Structures, VR, AI Games, Computer Graphics, 3D/2D Art.</div>
                         </div>
                         <div class="item-row">
-                            <div class="item-head">Certifications & Training[cite: 10]</div>
+                            <div class="item-head">Certifications & Training</div>
                             <div class="item-desc" style="margin-top: 0.2rem;">
-                                • Unity 3D Program — CEGA (2025–2026)[cite: 10]<br>
-                                • Generative AI for Games — EdX - HP (2025)[cite: 10]<br>
-                                • Cybersecurity — Cisco Networking Academy (2025)[cite: 10]
+                                • Unity 3D Program — CEGA (2025–2026)<br>
+                                • Generative AI for Games — EdX - HP (2025)<br>
+                                • Cybersecurity — Cisco Networking Academy (2025)
                             </div>
                         </div>
                     </div>
@@ -571,26 +572,26 @@
                     <div>
                         <h3><i class="fas fa-award"></i> Awards & Profile</h3>
                         <div class="item-row">
-                            <div class="item-head">Achievements & Awards[cite: 10]</div>
+                            <div class="item-head">Achievements & Awards</div>
                             <div class="item-desc" style="margin-top: 0.2rem;">
-                                • Runner-Up FYP (Unfold): PGDC Air University FYP Expo (2025)[cite: 10]<br>
-                                • Runner-Up Game Jam: PGDC Air University Game Jam (2023)[cite: 10]<br>
-                                • Google Code Jam Qualifier (2022)[cite: 10]
+                                • Runner-Up FYP (Unfold): PGDC Air University FYP Expo (2025)<br>
+                                • Runner-Up Game Jam: PGDC Air University Game Jam (2023)<br>
+                                • Google Code Jam Qualifier (2022)
                             </div>
                         </div>
                         <div class="item-row">
-                            <div class="item-head">Technical Profile[cite: 10]</div>
+                            <div class="item-head">Technical Profile</div>
                             <div class="tag-cloud">
-                                <span>Unity (C#)[cite: 10]</span>
-                                <span>Cocos (TypeScript)[cite: 10]</span>
-                                <span>Unreal Engine[cite: 10]</span>
-                                <span>C++[cite: 10]</span>
-                                <span>HTML5 Playable Ads[cite: 10]</span>
-                                <span>VR (Oculus)[cite: 10]</span>
-                                <span>Blender 3D[cite: 10]</span>
-                                <span>Photoshop[cite: 10]</span>
-                                <span>Ibis Paint[cite: 10]</span>
-                                <span>UI/UX[cite: 10]</span>
+                                <span>Unity (C#)</span>
+                                <span>Cocos (TypeScript)</span>
+                                <span>Unreal Engine</span>
+                                <span>C++</span>
+                                <span>HTML5 Playable Ads</span>
+                                <span>VR (Oculus)</span>
+                                <span>Blender 3D</span>
+                                <span>Photoshop</span>
+                                <span>Ibis Paint</span>
+                                <span>UI/UX</span>
                             </div>
                         </div>
                     </div>
@@ -599,7 +600,7 @@
             </div>
         </section>
 
-        <!-- Top Projects (Without Challenge/Solution Sub-sections) -->
+        <!-- Top Projects (One Line Descriptions) -->
         <section id="projects">
             <h2 class="section-title"><i class="fas fa-gamepad"></i> Top Projects</h2>
             <div class="projects-grid">
@@ -610,17 +611,15 @@
                         <iframe src="https://www.youtube.com/embed/4frLGKb0yWA" allowfullscreen></iframe>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">1. Puzzle Block Jam - Playable Ads[cite: 10]</h3>
-                        <p class="project-text">
-                            A lightweight, highly optimized HTML5 playable advertisement designed for rapid loading, low memory footprint, and high engagement across mobile ad networks[cite: 10].
-                        </p>
+                        <h3 class="project-title">1. Puzzle Block Jam - Playable Ads</h3>
+                        <p class="project-text">Lightweight, highly optimized HTML5 playable advertisement for mobile ad networks.</p>
                         <div class="p-tags">
-                            <span class="p-tag">HTML5[cite: 10]</span>
-                            <span class="p-tag">Cocos Creator[cite: 10]</span>
-                            <span class="p-tag">TypeScript[cite: 10]</span>
-                            <span class="p-tag">AppLovin[cite: 10]</span>
+                            <span class="p-tag">HTML5</span>
+                            <span class="p-tag">Cocos Creator</span>
+                            <span class="p-tag">TypeScript</span>
+                            <span class="p-tag">AppLovin</span>
                         </div>
-                        <a href="https://youtu.be/4frLGKb0yWA" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 10]</a>
+                        <a href="https://youtu.be/4frLGKb0yWA" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo</a>
                     </div>
                 </div>
 
@@ -630,18 +629,15 @@
                         <iframe src="https://www.youtube.com/embed/ScVLz-J4ar0" allowfullscreen></iframe>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">2. Unfold (FYP)[cite: 10]</h3>
-                        <p class="project-text">
-                            Final Year Project & PGDC 2025 Runner-Up: An atmospheric PC adventure game featuring rich storyboarding cutscenes, dynamic UI functionality, 3D modeling, and custom animations[cite: 10].
-                        </p>
+                        <h3 class="project-title">2. Unfold (FYP)</h3>
+                        <p class="project-text">PGDC 2025 Runner-Up atmospheric PC adventure game with rich cutscenes and 3D artwork.</p>
                         <div class="p-tags">
-                            <span class="p-tag">PC[cite: 10]</span>
-                            <span class="p-tag">Unity[cite: 10]</span>
-                            <span class="p-tag">C#[cite: 10]</span>
-                            <span class="p-tag">Blender 3D[cite: 10]</span>
-                            <span class="p-tag">Cinemachine / Timeline[cite: 10]</span>
+                            <span class="p-tag">PC</span>
+                            <span class="p-tag">Unity</span>
+                            <span class="p-tag">C#</span>
+                            <span class="p-tag">Blender 3D</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=ScVLz-J4ar0" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Gameplay[cite: 10]</a>
+                        <a href="https://www.youtube.com/watch?v=ScVLz-J4ar0" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Gameplay</a>
                     </div>
                 </div>
 
@@ -651,17 +647,15 @@
                         <iframe src="https://www.youtube.com/embed/qnOLE6mJ9oQ" allowfullscreen></iframe>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">3. Mini-Game Re-Rise[cite: 10]</h3>
-                        <p class="project-text">
-                            Rapid prototype solo-developed PC game created for She Jam 2025 featuring economy, plot management, custom dialogue systems, timer puzzles, and shop interfaces[cite: 10].
-                        </p>
+                        <h3 class="project-title">3. Mini-Game Re-Rise</h3>
+                        <p class="project-text">Solo-developed PC game prototype built for She Jam 2025 featuring economy and management loops.</p>
                         <div class="p-tags">
-                            <span class="p-tag">PC[cite: 10]</span>
-                            <span class="p-tag">Unity[cite: 10]</span>
-                            <span class="p-tag">C#[cite: 10]</span>
-                            <span class="p-tag">Solo Prototyping[cite: 10]</span>
+                            <span class="p-tag">PC</span>
+                            <span class="p-tag">Unity</span>
+                            <span class="p-tag">C#</span>
+                            <span class="p-tag">Game Jam</span>
                         </div>
-                        <a href="https://torpidasia.itch.io/re-rise" target="_blank" class="p-link"><i class="fas fa-external-link-alt"></i> Play on Itch.io[cite: 10]</a>
+                        <a href="https://torpidasia.itch.io/re-rise" target="_blank" class="p-link"><i class="fas fa-external-link-alt"></i> Play on Itch.io</a>
                     </div>
                 </div>
 
@@ -671,15 +665,13 @@
                         <i class="fas fa-flask"></i>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">4. Virtual Chemistry Lab[cite: 10]</h3>
-                        <p class="project-text">
-                            An interactive mobile simulation designed for educational safety, allowing students to conduct virtual chemistry experiments with guided steps and touch feedback[cite: 10].
-                        </p>
+                        <h3 class="project-title">4. Virtual Chemistry Lab</h3>
+                        <p class="project-text">Interactive mobile simulation allowing students to safely conduct virtual chemistry experiments.</p>
                         <div class="p-tags">
-                            <span class="p-tag">Android[cite: 10]</span>
-                            <span class="p-tag">Unity[cite: 10]</span>
-                            <span class="p-tag">C#[cite: 10]</span>
-                            <span class="p-tag">Client Project[cite: 10]</span>
+                            <span class="p-tag">Android</span>
+                            <span class="p-tag">Unity</span>
+                            <span class="p-tag">C#</span>
+                            <span class="p-tag">Simulation</span>
                         </div>
                     </div>
                 </div>
@@ -690,17 +682,14 @@
                         <iframe src="https://www.youtube.com/embed/JwL_W5GlG50" allowfullscreen></iframe>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">5. VR Fantasy Game[cite: 10]</h3>
-                        <p class="project-text">
-                            An immersive VR action prototype featuring room interactions and wand-shooting combat mechanics against attacking enemy waves using Oculus interaction SDK[cite: 10].
-                        </p>
+                        <h3 class="project-title">5. VR Fantasy Game</h3>
+                        <p class="project-text">Immersive VR action prototype with interactive room mechanics and wand-shooting combat.</p>
                         <div class="p-tags">
-                            <span class="p-tag">VR[cite: 10]</span>
-                            <span class="p-tag">Unity[cite: 10]</span>
-                            <span class="p-tag">Oculus[cite: 10]</span>
-                            <span class="p-tag">Interactive Environments[cite: 10]</span>
+                            <span class="p-tag">VR</span>
+                            <span class="p-tag">Unity</span>
+                            <span class="p-tag">Oculus</span>
                         </div>
-                        <a href="https://youtu.be/JwL_W5GlG50" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 9]</a>
+                        <a href="https://youtu.be/JwL_W5GlG50" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo</a>
                     </div>
                 </div>
 
@@ -710,34 +699,31 @@
                         <iframe src="https://www.youtube.com/embed/SilH80DxWeg" allowfullscreen></iframe>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">6. Smash Hit VR[cite: 10]</h3>
-                        <p class="project-text">
-                            A fast-paced VR glass-destruction experience built around projectile aiming, dynamic impact physics, particle trajectories, and power-up mechanics[cite: 10].
-                        </p>
+                        <h3 class="project-title">6. Smash Hit VR</h3>
+                        <p class="project-text">Fast-paced VR glass-destruction experience featuring projectile physics and power-up mechanics.</p>
                         <div class="p-tags">
-                            <span class="p-tag">VR[cite: 10]</span>
-                            <span class="p-tag">Unity[cite: 10]</span>
-                            <span class="p-tag">Oculus[cite: 10]</span>
-                            <span class="p-tag">Physics / Destruction[cite: 10]</span>
+                            <span class="p-tag">VR</span>
+                            <span class="p-tag">Unity</span>
+                            <span class="p-tag">Physics</span>
                         </div>
-                        <a href="https://youtu.be/SilH80DxWeg" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 9]</a>
+                        <a href="https://youtu.be/SilH80DxWeg" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo</a>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Double Crossed Comic with Smaller Controlled Reader View -->
+        <!-- Double Crossed Comic (5 Pages View, Larger Display) -->
         <section id="comic">
-            <h2 class="section-title"><i class="fas fa-book-open"></i> 7. Double Crossed (Comic Book)[cite: 10]</h2>
+            <h2 class="section-title"><i class="fas fa-book-open"></i> 7. Double Crossed (Comic Book)</h2>
             <div class="comic-box">
                 <p style="color: var(--text-muted); font-size: 0.88rem; text-align: center;">
-                    A published collaborative digital comic book featuring character designs, panel layouts, and visual storytelling[cite: 10].
-                    <a href="https://m.webtoons.com/en/canvas/double-crossed/list?title_no=977852" target="_blank" class="p-link" style="margin-left: 0.5rem;"><i class="fas fa-external-link-alt"></i> Webtoon Canvas[cite: 10]</a>
+                    Published collaborative digital comic book created with Ibis Paint and Photoshop.
+                    <a href="https://m.webtoons.com/en/canvas/double-crossed/list?title_no=977852" target="_blank" class="p-link" style="margin-left: 0.5rem;"><i class="fas fa-external-link-alt"></i> Webtoon Canvas</a>
                 </p>
 
-                <!-- Scaled down comic view -->
-                <div class="comic-viewer-small">
+                <!-- 5 Page Viewer -->
+                <div class="comic-viewer-5page">
                     <div class="comic-slot">
                         <img id="cp1" src="double_crossed/behance_img_1.jpg" onclick="openLightbox(this.src)" alt="Page 1">
                     </div>
@@ -747,19 +733,25 @@
                     <div class="comic-slot">
                         <img id="cp3" src="double_crossed/behance_img_3.jpg" onclick="openLightbox(this.src)" alt="Page 3">
                     </div>
+                    <div class="comic-slot">
+                        <img id="cp4" src="double_crossed/behance_img_4.jpg" onclick="openLightbox(this.src)" alt="Page 4">
+                    </div>
+                    <div class="comic-slot">
+                        <img id="cp5" src="double_crossed/behance_img_5.jpg" onclick="openLightbox(this.src)" alt="Page 5">
+                    </div>
                 </div>
 
                 <div class="comic-nav">
-                    <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.78rem;" onclick="changePages(-3)"><i class="fas fa-chevron-left"></i> Prev</button>
-                    <span class="comic-page-num" id="page-txt">Pages 1 - 3 / 52</span>
-                    <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.78rem;" onclick="changePages(3)">Next <i class="fas fa-chevron-right"></i></button>
+                    <button class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.82rem;" onclick="changePages(-5)"><i class="fas fa-chevron-left"></i> Prev 5 Pages</button>
+                    <span class="comic-page-num" id="page-txt">Pages 1 - 5 / 52</span>
+                    <button class="btn btn-outline" style="padding: 0.4rem 1rem; font-size: 0.82rem;" onclick="changePages(5)">Next 5 Pages <i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
         <!-- Storyboards -->
         <section id="storyboards">
-            <h2 class="section-title"><i class="fas fa-images"></i> Storyboards & Visual Planning[cite: 10]</h2>
+            <h2 class="section-title"><i class="fas fa-images"></i> Storyboards & Visual Planning</h2>
             <div class="gallery-grid">
                 <div class="gallery-item" onclick="openLightbox('storyboards/1.jpg')">
                     <img src="storyboards/1.jpg" alt="Board 1" onerror="this.src='https://via.placeholder.com/200x140?text=Board+1'">
@@ -781,9 +773,9 @@
 
         <!-- 3D Art & Trailers -->
         <section id="art3d">
-            <h2 class="section-title"><i class="fas fa-cube"></i> Digital Sketches • Digital Art • 3D Modelling[cite: 10]</h2>
+            <h2 class="section-title"><i class="fas fa-cube"></i> Digital Art & 3D Modelling</h2>
             <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
-                3D modeling, environmental settings, UI concept designs, Blender visual renders, and trailers[cite: 10]. Full portfolio at <a href="https://behance.net/aasiakhalid" target="_blank" class="p-link">behance.net/aasiakhalid[cite: 10]</a>.
+                3D modeling, environment settings, UI concept designs, and Blender visual renders. Full portfolio at <a href="https://behance.net/aasiakhalid" target="_blank" class="p-link">behance.net/aasiakhalid</a>.
             </p>
             
             <div class="gallery-grid" style="margin-bottom: 1.5rem;">
@@ -811,7 +803,6 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Robber Cinematic Trailer</h3>
-                        <p class="project-text">3D character animation and cinematic lighting created in Blender for game promotional trailer.</p>
                     </div>
                 </div>
                 <div class="project-card">
@@ -820,7 +811,6 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Unfold Cinematic Story Trailer</h3>
-                        <p class="project-text">High-quality 3D cinematic cutscene trailer for Unfold game story intro.</p>
                     </div>
                 </div>
             </div>
@@ -835,45 +825,43 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Aasia Khalid. All rights reserved[cite: 9].</p>
+            <p>&copy; 2026 Aasia Khalid. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Comic Reader Script
+        // 5-Page Comic Reader Script
         let currentPage = 1;
         const totalPages = 52;
 
         function updateComic() {
-            const p1 = document.getElementById('cp1');
-            const p2 = document.getElementById('cp2');
-            const p3 = document.getElementById('cp3');
+            const slots = [
+                document.getElementById('cp1'),
+                document.getElementById('cp2'),
+                document.getElementById('cp3'),
+                document.getElementById('cp4'),
+                document.getElementById('cp5')
+            ];
             const txt = document.getElementById('page-txt');
 
-            p1.src = `double_crossed/behance_img_${currentPage}.jpg`;
-            
-            if (currentPage + 1 <= totalPages) {
-                p2.src = `double_crossed/behance_img_${currentPage + 1}.jpg`;
-                p2.parentElement.style.visibility = 'visible';
-            } else {
-                p2.parentElement.style.visibility = 'hidden';
+            for (let i = 0; i < 5; i++) {
+                const pageNum = currentPage + i;
+                if (pageNum <= totalPages) {
+                    slots[i].src = `double_crossed/behance_img_${pageNum}.jpg`;
+                    slots[i].parentElement.style.visibility = 'visible';
+                } else {
+                    slots[i].parentElement.style.visibility = 'hidden';
+                }
             }
 
-            if (currentPage + 2 <= totalPages) {
-                p3.src = `double_crossed/behance_img_${currentPage + 2}.jpg`;
-                p3.parentElement.style.visibility = 'visible';
-            } else {
-                p3.parentElement.style.visibility = 'hidden';
-            }
-
-            const lastVisible = Math.min(currentPage + 2, totalPages);
+            const lastVisible = Math.min(currentPage + 4, totalPages);
             txt.textContent = `Pages ${currentPage} - ${lastVisible} / ${totalPages}`;
         }
 
         function changePages(offset) {
             currentPage += offset;
             if (currentPage < 1) currentPage = 1;
-            if (currentPage > totalPages) currentPage = totalPages - 2;
+            if (currentPage > totalPages) currentPage = totalPages - 4;
             updateComic();
         }
 
