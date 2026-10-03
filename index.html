@@ -3,90 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aasia Khalid - Game Developer & Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Aasia Khalid | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-dark: #0a0e17;
-            --bg-card: #121824;
-            --bg-card-hover: #1a2333;
-            --primary: #00f2fe;
-            --primary-glow: rgba(0, 242, 254, 0.3);
-            --secondary: #4facfe;
-            --text-main: #f0f4f8;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --accent-hover: #0284c7;
+            --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --radius-lg: 16px;
+            --border-color: #334155;
             --radius-md: 10px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-lg: 14px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        .bg-glow {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, rgba(0,0,0,0) 70%);
-            top: -100px;
-            left: -100px;
-            z-index: -1;
-            pointer-events: none;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
-        .bg-glow-bottom {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(79, 172, 254, 0.15) 0%, rgba(0,0,0,0) 70%);
-            bottom: -100px;
-            right: -100px;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Navigation */
+        /* Navbar */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            background: rgba(10, 14, 23, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-color);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -100,241 +78,230 @@
             text-decoration: none;
             font-size: 0.85rem;
             font-weight: 500;
-            transition: var(--transition);
+            transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent-color);
         }
 
-        /* Header / Hero Section */
+        /* Hero Header */
         header {
-            padding: 8rem 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 7.5rem 0 2.5rem;
             text-align: center;
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ffffff 30%, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--text-main);
+            margin-bottom: 0.2rem;
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--primary);
+            font-size: 1.1rem;
+            color: var(--accent-color);
             font-weight: 600;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
         }
 
-        .hero-contact {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+        .hero-contacts {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             flex-wrap: wrap;
-        }
-
-        .hero-desc {
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 0.88rem;
+            margin-bottom: 1.2rem;
         }
 
-        .social-buttons {
+        .hero-contacts span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .hero-bio {
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .hero-btns {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 0.8rem;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.8rem 1.6rem;
-            border-radius: var(--radius-md);
-            font-weight: 600;
+            gap: 0.5rem;
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 500;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: var(--transition);
+            transition: 0.3s;
             cursor: pointer;
-            border: none;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #050811;
-            box-shadow: 0 4px 20px var(--primary-glow);
+            background: var(--accent-color);
+            color: #0f172a;
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
+            background: var(--accent-hover);
+            color: #fff;
         }
 
         .btn-outline {
-            background: rgba(255, 255, 255, 0.05);
+            background: transparent;
             color: var(--text-main);
             border: 1px solid var(--border-color);
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
-            color: var(--primary);
-            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        section {
-            padding: 3.5rem 0;
-        }
-
-        .section-header {
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
+        /* Section Header */
+        .section-title {
+            font-size: 1.6rem;
             font-weight: 700;
             color: var(--text-main);
-        }
-
-        .section-header .line {
-            flex-grow: 1;
-            height: 1px;
-            background: var(--border-color);
-        }
-
-        /* Resume Grid Styles */
-        .resume-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .resume-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 1.8rem;
-        }
-
-        .resume-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
             gap: 0.6rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
         }
 
-        .timeline-item {
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 1.2rem;
-            border-left: 2px solid rgba(0, 242, 254, 0.3);
+        .section-title i {
+            color: var(--accent-color);
         }
 
-        .timeline-item:last-child {
+        section {
+            padding: 2rem 0;
+        }
+
+        /* Compact Top 3 Sections Layout */
+        .top-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            align-items: stretch;
+        }
+
+        .compact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: var(--shadow);
+        }
+
+        .compact-card h3 {
+            font-size: 1.05rem;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .item-row {
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+        }
+
+        .item-row:last-child {
             margin-bottom: 0;
         }
 
-        .timeline-title {
-            font-weight: 700;
-            font-size: 1.05rem;
+        .item-head {
+            font-weight: 600;
             color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .timeline-subtitle {
-            font-size: 0.85rem;
-            color: var(--primary);
-            margin-bottom: 0.4rem;
+        .item-sub {
+            color: var(--accent-color);
+            font-size: 0.78rem;
+            margin-bottom: 0.2rem;
         }
 
-        .timeline-desc {
-            font-size: 0.9rem;
+        .item-desc {
             color: var(--text-muted);
-        }
-
-        .cgpa-tag {
-            display: inline-block;
-            background: rgba(0, 242, 254, 0.15);
-            color: var(--primary);
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
             font-size: 0.8rem;
-            margin-left: 0.5rem;
         }
 
-        .badge-list {
+        .badge-tag {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--accent-color);
+            font-weight: 600;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        .tag-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.35rem;
             margin-top: 0.5rem;
         }
 
-        .badge {
-            background: rgba(255, 255, 255, 0.05);
+        .tag-cloud span {
+            background: #0f172a;
             border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
         }
 
-        /* Projects Grid */
+        /* Projects Grid (No Challenge/Solution) */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
             overflow: hidden;
-            transition: var(--transition);
+            box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
+            transition: transform 0.3s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(0, 242, 254, 0.3);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
         }
 
-        .video-wrapper {
+        .media-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
-            overflow: hidden;
             background: #000;
         }
 
-        .video-wrapper iframe {
+        .media-container iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -343,171 +310,136 @@
             border: 0;
         }
 
-        .project-info {
-            padding: 1.5rem;
-            flex-grow: 1;
+        .project-content {
+            padding: 1.2rem;
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
         }
 
         .project-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             color: var(--text-main);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            margin-bottom: 0.4rem;
         }
 
-        .project-desc {
-            font-size: 0.9rem;
+        .project-text {
             color: var(--text-muted);
+            font-size: 0.85rem;
             margin-bottom: 1rem;
             flex-grow: 1;
         }
 
-        .tech-tags {
+        .p-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: auto;
+            gap: 0.4rem;
+            margin-bottom: 0.8rem;
         }
 
-        .tag {
-            background: rgba(0, 242, 254, 0.1);
-            color: var(--primary);
-            font-size: 0.75rem;
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            font-weight: 600;
+        .p-tag {
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-color);
+            font-size: 0.73rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
         }
 
-        .external-link {
-            color: var(--primary);
+        .p-link {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.82rem;
             text-decoration: none;
-            font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            margin-top: 0.8rem;
-            font-weight: 600;
+            gap: 0.3rem;
         }
 
-        .external-link:hover {
+        .p-link:hover {
             text-decoration: underline;
         }
 
-        /* Storyboards */
-        .storyboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .storyboard-card {
-            background: var(--bg-card);
+        /* Compact Double Crossed Comic Section */
+        .comic-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: var(--transition);
-            cursor: pointer;
+            padding: 1.2rem;
+            box-shadow: var(--shadow);
         }
 
-        .storyboard-card:hover {
-            transform: scale(1.03);
-            border-color: var(--primary);
-        }
-
-        .storyboard-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* 3-Page Multi-View Comic Reader */
-        .comic-container {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .comic-viewer-multi {
+        .comic-viewer-small {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1.5rem 0;
-            background: #000;
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            gap: 0.8rem;
+            max-width: 600px; /* Reduced scale/view size */
+            margin: 1rem auto;
+            background: #090d16;
+            padding: 0.6rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
         }
 
-        .comic-page-slot {
-            background: #111;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+        .comic-slot {
+            height: 220px; /* Scaled down viewer height */
+            background: #1e293b;
+            border-radius: 4px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 350px;
         }
 
-        .comic-page-slot img {
+        .comic-slot img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            display: block;
             cursor: pointer;
         }
 
-        .comic-controls {
+        .comic-nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 1rem;
+            margin-top: 0.8rem;
         }
 
-        .page-counter {
-            font-weight: 600;
+        .comic-page-num {
+            font-size: 0.8rem;
             color: var(--text-muted);
-            min-width: 140px;
         }
 
-        /* 3D Renders Grid */
-        .renders-grid {
+        /* Grid for Storyboards & 3D Art */
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
         }
 
-        .render-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-md);
+        .gallery-item {
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
+            border-radius: 8px;
             overflow: hidden;
-            transition: var(--transition);
             cursor: pointer;
+            transition: 0.3s;
         }
 
-        .render-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
+        .gallery-item:hover {
+            border-color: var(--accent-color);
+            transform: scale(1.02);
         }
 
-        .render-card img {
+        .gallery-item img {
             width: 100%;
-            height: 200px;
+            height: 140px;
             object-fit: cover;
             display: block;
         }
 
-        /* Modal Lightbox */
+        /* Lightbox */
         .modal {
             display: none;
             position: fixed;
@@ -517,165 +449,149 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(8px);
             justify-content: center;
             align-items: center;
         }
 
-        .modal-content {
+        .modal-img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: var(--radius-md);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
+            border-radius: 6px;
         }
 
         footer {
             border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem;
+            padding: 2rem 0;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            background: rgba(10, 14, 23, 0.9);
+            font-size: 0.85rem;
+            margin-top: 2rem;
         }
 
-        @media (max-width: 900px) {
-            .comic-viewer-multi {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 992px) {
+            .top-grid { grid-template-columns: 1fr; }
         }
 
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2.2rem; }
+            .comic-viewer-small { grid-template-columns: 1fr; }
+            .comic-slot { height: 280px; }
             .nav-links { display: none; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .resume-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
-    <div class="bg-glow-bottom"></div>
-
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">
+        <div class="container nav-content">
             <a href="#" class="logo">AASIA KHALID</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience & Education</a></li>
-                <li><a href="#projects">Top Projects</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#storyboards">Storyboards</a></li>
                 <li><a href="#comic">Comic Art</a></li>
-                <li><a href="#3d-work">3D Art & Videos</a></li>
+                <li><a href="#art3d">3D & Trailers</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Header / Hero Section -->
+    <!-- Hero Header -->
     <header id="about">
-        <h1 class="hero-title">Aasia Khalid</h1>
-        <div class="hero-subtitle">GAME DEVELOPER | UNITY • COCOS CREATOR • VR • HTML5 PLAYABLE ADS • 3D ART</div>
-        <div class="hero-contact">
-            <span><i class="fas fa-location-dot"></i> Islamabad, Pakistan</span>
-            <span><i class="fas fa-phone"></i> (+92) 3369266235</span>
-            <span><i class="fas fa-envelope"></i> missasiakhalid@gmail.com</span>
-        </div>
-        <p class="hero-desc">
-            Game developer and digital artist focused on shipping optimized, interactive gameplay across mobile, PC, VR, and web platforms. Experienced in Unity (C#), Cocos Creator (TypeScript), C++ programming, lightweight HTML5 playable ads, game architecture, and mobile performance optimization. Proficient in Blender 3D modeling, digital sketching, UI/UX design, and visual storytelling, with an award-recognized track record in game jams and national game expos[cite: 10].
-        </p>
-        <div class="social-buttons">
-            <a href="https://behance.net/aasiakhalid" target="_blank" class="btn btn-primary"><i class="fab fa-behance"></i> Behance Portfolio[cite: 10]</a>
-            <a href="https://linkedin.com/in/aasia-k-981872ba" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn[cite: 10]</a>
-            <a href="mailto:missasiakhalid@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me[cite: 10]</a>
+        <div class="container">
+            <h1 class="hero-title">Aasia Khalid</h1>
+            <div class="hero-subtitle">GAME DEVELOPER | UNITY • COCOS CREATOR • VR • HTML5 PLAYABLE ADS • 3D ART</div>
+            <div class="hero-contacts">
+                <span><i class="fas fa-location-dot"></i> Islamabad, Pakistan</span>
+                <span><i class="fas fa-phone"></i> (+92) 3369266235</span>
+                <span><i class="fas fa-envelope"></i> missasiakhalid@gmail.com</span>
+            </div>
+            <p class="hero-bio">
+                Game developer and digital artist focused on shipping optimized, interactive gameplay across mobile, PC, VR, and web platforms. Experienced in Unity (C#), Cocos Creator (TypeScript), C++ programming, lightweight HTML5 playable ads, game architecture, and mobile performance optimization. Proficient in Blender 3D modeling, digital sketching, UI/UX design, and visual storytelling, with an award-recognized track record in game jams and national game expos[cite: 10].
+            </p>
+            <div class="hero-btns">
+                <a href="https://behance.net/aasiakhalid" target="_blank" class="btn btn-primary"><i class="fab fa-behance"></i> Behance Portfolio[cite: 10]</a>
+                <a href="https://linkedin.com/in/aasia-k-981872ba" target="_blank" class="btn btn-outline"><i class="fab fa-linkedin"></i> LinkedIn[cite: 10]</a>
+                <a href="mailto:missasiakhalid@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email[cite: 10]</a>
+            </div>
         </div>
     </header>
 
     <div class="container">
 
-        <!-- Experience, Education, Awards & Skills -->
-        <section id="experience">
-            <div class="section-header">
-                <h2>Background & Qualifications</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="resume-grid">
+        <!-- Top 3 Compact Grid Sections (Experience, Education with BS & CGPA, Awards & Skills) -->
+        <section id="overview">
+            <div class="top-grid">
                 
-                <!-- Experience Snapshot -->
-                <div class="resume-card">
-                    <h3><i class="fas fa-briefcase"></i> Experience Snapshot</h3>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Jr. Game Developer</div>
-                        <div class="timeline-subtitle">Invicttus | Jan 2026 – Present[cite: 10]</div>
-                        <div class="timeline-desc">Unity & Cocos Creator development, C# & TypeScript optimization, Git workflows, lightweight playable ads, and ad deployment for AppLovin[cite: 10].</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Digital Games Developer Apprentice</div>
-                        <div class="timeline-subtitle">Mindstorm Studios | Jun 2024 – Aug 2024[cite: 10]</div>
-                        <div class="timeline-desc">Summer apprenticeship, game jam style development, complete Unity game prototype implementation, and team collaboration[cite: 10].</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Jr. Game Artist</div>
-                        <div class="timeline-subtitle">Gameotivity | Jun 2023 – Sep 2023[cite: 10]</div>
-                        <div class="timeline-desc">2D character concept design, environment art, UI asset creation, and establishing visual identity for game startup[cite: 10].</div>
-                    </div>
-                </div>
-
-                <!-- Education & Certifications -->
-                <div class="resume-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
-                    <div class="timeline-item">
-                        <div class="timeline-title">BS Computer Games Development <span class="cgpa-tag">CGPA: 3.25 / 4.00</span>[cite: 10]</div>
-                        <div class="timeline-subtitle">Air University, Islamabad (2021–2025)[cite: 10]</div>
-                        <div class="timeline-desc">
-                            <strong>Relevant Coursework:</strong> Unity Development, Unreal Engine, C++ & C# Programming, OOP, Data Structures, Virtual Reality, AI for Games, Computer Graphics, 3D Modelling, 2D Art, and Game Production[cite: 10].
+                <!-- Experience Section -->
+                <div class="compact-card">
+                    <div>
+                        <h3><i class="fas fa-briefcase"></i> Experience</h3>
+                        <div class="item-row">
+                            <div class="item-head">Jr. Game Developer</div>
+                            <div class="item-sub">Invicttus | Jan 2026 – Present[cite: 10]</div>
+                            <div class="item-desc">Unity & Cocos Creator, C# & TypeScript optimization, Git workflows, playable ads, AppLovin deployment[cite: 10].</div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Certifications & Training[cite: 10]</div>
-                        <div class="timeline-desc" style="margin-top: 0.4rem;">
-                            • <strong>Unity 3D Training Program</strong> — Center of Excellence in Gaming & Animation (CEGA) (2025–2026)[cite: 10]<br>
-                            • <strong>Generative AI for Game Development</strong> — EdX - HP (2025)[cite: 10]<br>
-                            • <strong>Introduction to Cybersecurity</strong> — Cisco Networking Academy (2025)[cite: 10]
+                        <div class="item-row">
+                            <div class="item-head">Digital Games Apprentice</div>
+                            <div class="item-sub">Mindstorm Studios | Jun 2024 – Aug 2024[cite: 10]</div>
+                            <div class="item-desc">Summer apprenticeship, game jam prototyping, Unity implementation, team collaboration[cite: 10].</div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-head">Jr. Game Artist</div>
+                            <div class="item-sub">Gameotivity | Jun 2023 – Sep 2023[cite: 10]</div>
+                            <div class="item-desc">2D character concept design, environment art, UI asset creation, startup visual identity[cite: 10].</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Achievements & Core Profile -->
-                <div class="resume-card">
-                    <h3><i class="fas fa-trophy"></i> Achievements & Profile</h3>
-                    <div class="timeline-item">
-                        <div class="timeline-title">Achievements & Awards[cite: 10]</div>
-                        <div class="timeline-desc" style="margin-top: 0.4rem;">
-                            • <strong>Runner-Up - Final Year Project (Unfold):</strong> Pakistan Game Developers Conference (PGDC), Air University FYP Expo, 2025[cite: 10].<br>
-                            • <strong>Runner-Up - Game Jam:</strong> Pakistan Game Developers Conference (PGDC), Air University Game Jam, 2023[cite: 10].<br>
-                            • <strong>Google Code Jam Qualifier:</strong> Google Code Jam, 2022[cite: 10].
+                <!-- Education & Certifications Section -->
+                <div class="compact-card">
+                    <div>
+                        <h3><i class="fas fa-graduation-cap"></i> Education & Certifications</h3>
+                        <div class="item-row">
+                            <div class="item-head">BS Computer Games Development <span class="badge-tag">3.25 CGPA</span>[cite: 10]</div>
+                            <div class="item-sub">Air University, Islamabad (2021–2025)[cite: 10]</div>
+                            <div class="item-desc">Unity, Unreal Engine, C++, C#, OOP, Data Structures, VR, AI Games, Computer Graphics, 3D/2D Art[cite: 10].</div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-head">Certifications & Training[cite: 10]</div>
+                            <div class="item-desc" style="margin-top: 0.2rem;">
+                                • Unity 3D Program — CEGA (2025–2026)[cite: 10]<br>
+                                • Generative AI for Games — EdX - HP (2025)[cite: 10]<br>
+                                • Cybersecurity — Cisco Networking Academy (2025)[cite: 10]
+                            </div>
                         </div>
                     </div>
-                    <div style="margin-top: 1rem;">
-                        <div class="timeline-title" style="margin-bottom: 0.5rem;">Core Technical Profile[cite: 10]</div>
-                        <div class="badge-list">
-                            <span class="badge">Unity (C#)[cite: 10]</span>
-                            <span class="badge">Cocos Creator (TypeScript)[cite: 10]</span>
-                            <span class="badge">Unreal Engine[cite: 10]</span>
-                            <span class="badge">C++[cite: 10]</span>
-                            <span class="badge">Shader Graph[cite: 10]</span>
-                            <span class="badge">HTML5 Playable Ads[cite: 10]</span>
-                            <span class="badge">AppLovin Optimization[cite: 10]</span>
-                            <span class="badge">VR (Oculus)[cite: 10]</span>
-                            <span class="badge">Blender 3D[cite: 10]</span>
-                            <span class="badge">Krita / Photoshop[cite: 10]</span>
-                            <span class="badge">Ibis Paint[cite: 10]</span>
-                            <span class="badge">UI/UX Design[cite: 10]</span>
+                </div>
+
+                <!-- Achievements & Core Profile Section -->
+                <div class="compact-card">
+                    <div>
+                        <h3><i class="fas fa-award"></i> Awards & Profile</h3>
+                        <div class="item-row">
+                            <div class="item-head">Achievements & Awards[cite: 10]</div>
+                            <div class="item-desc" style="margin-top: 0.2rem;">
+                                • Runner-Up FYP (Unfold): PGDC Air University FYP Expo (2025)[cite: 10]<br>
+                                • Runner-Up Game Jam: PGDC Air University Game Jam (2023)[cite: 10]<br>
+                                • Google Code Jam Qualifier (2022)[cite: 10]
+                            </div>
+                        </div>
+                        <div class="item-row">
+                            <div class="item-head">Technical Profile[cite: 10]</div>
+                            <div class="tag-cloud">
+                                <span>Unity (C#)[cite: 10]</span>
+                                <span>Cocos (TypeScript)[cite: 10]</span>
+                                <span>Unreal Engine[cite: 10]</span>
+                                <span>C++[cite: 10]</span>
+                                <span>HTML5 Playable Ads[cite: 10]</span>
+                                <span>VR (Oculus)[cite: 10]</span>
+                                <span>Blender 3D[cite: 10]</span>
+                                <span>Photoshop[cite: 10]</span>
+                                <span>Ibis Paint[cite: 10]</span>
+                                <span>UI/UX[cite: 10]</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -683,259 +599,228 @@
             </div>
         </section>
 
-        <!-- Top Projects Section -->
+        <!-- Top Projects (Without Challenge/Solution Sub-sections) -->
         <section id="projects">
-            <div class="section-header">
-                <h2>Top Projects</h2>
-                <div class="line"></div>
-            </div>
+            <h2 class="section-title"><i class="fas fa-gamepad"></i> Top Projects</h2>
             <div class="projects-grid">
                 
-                <!-- Project 1: Puzzle Block Jam -->
+                <!-- Project 1 -->
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/4frLGKb0yWA" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">1. Puzzle Block Jam - Playable Ads[cite: 10]</h3>
-                        <p class="project-desc">
-                            A lightweight, highly optimized HTML5 playable advertisement designed for rapid loading and high engagement across mobile ad networks[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Reduced asset bundle size and profiled TypeScript code to meet strict ad platform memory guidelines while preserving smooth 60fps animations via lightweight UI components and compression pipelines[cite: 10].
+                        <p class="project-text">
+                            A lightweight, highly optimized HTML5 playable advertisement designed for rapid loading, low memory footprint, and high engagement across mobile ad networks[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">HTML5[cite: 10]</span>
-                            <span class="tag">Cocos Creator[cite: 10]</span>
-                            <span class="tag">TypeScript[cite: 10]</span>
-                            <span class="tag">AppLovin[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">HTML5[cite: 10]</span>
+                            <span class="p-tag">Cocos Creator[cite: 10]</span>
+                            <span class="p-tag">TypeScript[cite: 10]</span>
+                            <span class="p-tag">AppLovin[cite: 10]</span>
                         </div>
-                        <a href="https://youtu.be/4frLGKb0yWA" target="_blank" class="external-link"><i class="fas fa-arrow-up-right-from-square"></i> Watch Demo[cite: 10]</a>
+                        <a href="https://youtu.be/4frLGKb0yWA" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 10]</a>
                     </div>
                 </div>
 
-                <!-- Project 2: Unfold -->
+                <!-- Project 2 -->
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/ScVLz-J4ar0" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">2. Unfold (FYP)[cite: 10]</h3>
-                        <p class="project-desc">
-                            <strong>Final Year Project & PGDC 2025 Runner-Up:</strong> An atmospheric PC adventure game featuring rich storyboarding cutscenes, dynamic UI functionality, 3D modeling, and custom animations[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Programmed responsive UI systems, modeled and animated 3D visual assets in Blender, and directed cutscene sequences using Unity Cinemachine and Timeline[cite: 10].
+                        <p class="project-text">
+                            Final Year Project & PGDC 2025 Runner-Up: An atmospheric PC adventure game featuring rich storyboarding cutscenes, dynamic UI functionality, 3D modeling, and custom animations[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">PC[cite: 10]</span>
-                            <span class="tag">Unity[cite: 10]</span>
-                            <span class="tag">C#[cite: 10]</span>
-                            <span class="tag">Blender 3D[cite: 10]</span>
-                            <span class="tag">Cinemachine / Timeline[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">PC[cite: 10]</span>
+                            <span class="p-tag">Unity[cite: 10]</span>
+                            <span class="p-tag">C#[cite: 10]</span>
+                            <span class="p-tag">Blender 3D[cite: 10]</span>
+                            <span class="p-tag">Cinemachine / Timeline[cite: 10]</span>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=ScVLz-J4ar0" target="_blank" class="external-link"><i class="fas fa-arrow-up-right-from-square"></i> Watch Gameplay[cite: 10]</a>
+                        <a href="https://www.youtube.com/watch?v=ScVLz-J4ar0" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Gameplay[cite: 10]</a>
                     </div>
                 </div>
 
-                <!-- Project 3: Mini-Game Re-Rise -->
+                <!-- Project 3 -->
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/qnOLE6mJ9oQ" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">3. Mini-Game Re-Rise[cite: 10]</h3>
-                        <p class="project-desc">
-                            <strong>She Jam 2025 Competition:</strong> A rapid prototype solo-developed PC game featuring economy, plot management, timer puzzles, dialogue boxes, and shop mechanics[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Architected modular C# scripts for property buying, rental timing, and shop transactions to deliver a complete solo-jam experience under strict deadlines[cite: 10].
+                        <p class="project-text">
+                            Rapid prototype solo-developed PC game created for She Jam 2025 featuring economy, plot management, custom dialogue systems, timer puzzles, and shop interfaces[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">PC[cite: 10]</span>
-                            <span class="tag">Unity[cite: 10]</span>
-                            <span class="tag">C#[cite: 10]</span>
-                            <span class="tag">Solo Prototyping[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">PC[cite: 10]</span>
+                            <span class="p-tag">Unity[cite: 10]</span>
+                            <span class="p-tag">C#[cite: 10]</span>
+                            <span class="p-tag">Solo Prototyping[cite: 10]</span>
                         </div>
-                        <a href="https://torpidasia.itch.io/re-rise" target="_blank" class="external-link"><i class="fas fa-arrow-up-right-from-square"></i> Play on Itch.io[cite: 10]</a>
+                        <a href="https://torpidasia.itch.io/re-rise" target="_blank" class="p-link"><i class="fas fa-external-link-alt"></i> Play on Itch.io[cite: 10]</a>
                     </div>
                 </div>
 
-                <!-- Project 4: Virtual Chemistry Lab -->
+                <!-- Project 4 -->
                 <div class="project-card">
-                    <div style="background: var(--bg-card-hover); height: 200px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 3rem;">
-                        <i class="fas fa-vial"></i>
+                    <div style="height: 190px; background: #0f172a; display: flex; align-items: center; justify-content: center; color: var(--accent-color); font-size: 2.5rem;">
+                        <i class="fas fa-flask"></i>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">4. Virtual Chemistry Lab[cite: 10]</h3>
-                        <p class="project-desc">
-                            <strong>Client Project:</strong> An interactive mobile simulation designed for educational safety, allowing students to conduct virtual chemistry experiments with guided steps[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Engineered step-guided experiment logic, collision interactions, and clear mobile UI feedback for a safe virtual learning environment[cite: 10].
+                        <p class="project-text">
+                            An interactive mobile simulation designed for educational safety, allowing students to conduct virtual chemistry experiments with guided steps and touch feedback[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">Android[cite: 10]</span>
-                            <span class="tag">Unity[cite: 10]</span>
-                            <span class="tag">C#[cite: 10]</span>
-                            <span class="tag">Client Project[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">Android[cite: 10]</span>
+                            <span class="p-tag">Unity[cite: 10]</span>
+                            <span class="p-tag">C#[cite: 10]</span>
+                            <span class="p-tag">Client Project[cite: 10]</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 5: VR Fantasy Game -->
+                <!-- Project 5 -->
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/JwL_W5GlG50" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">5. VR Fantasy Game[cite: 10]</h3>
-                        <p class="project-desc">
-                            An immersive VR action prototype featuring room interactions and wand-shooting combat mechanics against attacking enemy waves[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Configured Oculus interaction SDK colliders, wand combat scripts, and optimized enemy attack wave logic for high VR immersion[cite: 10].
+                        <p class="project-text">
+                            An immersive VR action prototype featuring room interactions and wand-shooting combat mechanics against attacking enemy waves using Oculus interaction SDK[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">VR[cite: 10]</span>
-                            <span class="tag">Unity[cite: 10]</span>
-                            <span class="tag">Oculus[cite: 10]</span>
-                            <span class="tag">Interactive Environments[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">VR[cite: 10]</span>
+                            <span class="p-tag">Unity[cite: 10]</span>
+                            <span class="p-tag">Oculus[cite: 10]</span>
+                            <span class="p-tag">Interactive Environments[cite: 10]</span>
                         </div>
-                        <a href="https://youtu.be/JwL_W5GlG50" target="_blank" class="external-link"><i class="fas fa-arrow-up-right-from-square"></i> Watch Demo[cite: 9]</a>
+                        <a href="https://youtu.be/JwL_W5GlG50" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 9]</a>
                     </div>
                 </div>
 
-                <!-- Project 6: Smash Hit VR -->
+                <!-- Project 6 -->
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/SilH80DxWeg" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">6. Smash Hit VR[cite: 10]</h3>
-                        <p class="project-desc">
-                            A fast-paced VR glass-destruction experience built around projectile aiming, dynamic impact physics, and power-up mechanics[cite: 10].<br><br>
-                            <strong>Challenges & Solutions:</strong> Optimized dynamic physics colliders, projectile trajectories, and impact particle effects to ensure smooth 90fps VR gameplay[cite: 10].
+                        <p class="project-text">
+                            A fast-paced VR glass-destruction experience built around projectile aiming, dynamic impact physics, particle trajectories, and power-up mechanics[cite: 10].
                         </p>
-                        <div class="tech-tags">
-                            <span class="tag">VR[cite: 10]</span>
-                            <span class="tag">Unity[cite: 10]</span>
-                            <span class="tag">Oculus[cite: 10]</span>
-                            <span class="tag">Physics / Destruction[cite: 10]</span>
+                        <div class="p-tags">
+                            <span class="p-tag">VR[cite: 10]</span>
+                            <span class="p-tag">Unity[cite: 10]</span>
+                            <span class="p-tag">Oculus[cite: 10]</span>
+                            <span class="p-tag">Physics / Destruction[cite: 10]</span>
                         </div>
-                        <a href="https://youtu.be/SilH80DxWeg" target="_blank" class="external-link"><i class="fas fa-arrow-up-right-from-square"></i> Watch Demo[cite: 9]</a>
+                        <a href="https://youtu.be/SilH80DxWeg" target="_blank" class="p-link"><i class="fas fa-play"></i> Watch Demo[cite: 9]</a>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- Storyboards Section -->
-        <section id="storyboards">
-            <div class="section-header">
-                <h2>Storyboards & Visual Planning</h2>
-                <div class="line"></div>
-            </div>
-            <div class="storyboard-grid">
-                <div class="storyboard-card" onclick="openLightbox('storyboards/1.jpg')">
-                    <img src="storyboards/1.jpeg" alt="Storyboard 1" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Storyboard+1'">
-                </div>
-                <div class="storyboard-card" onclick="openLightbox('storyboards/2.jpg')">
-                    <img src="storyboards/2.jpeg" alt="Storyboard 2" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Storyboard+2'">
-                </div>
-                <div class="storyboard-card" onclick="openLightbox('storyboards/3.jpg')">
-                    <img src="storyboards/3.jpeg" alt="Storyboard 3" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Storyboard+3'">
-                </div>
-                <div class="storyboard-card" onclick="openLightbox('storyboards/4.jpg')">
-                    <img src="storyboards/4.jpeg" alt="Storyboard 4" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Storyboard+4'">
-                </div>
-                <div class="storyboard-card" onclick="openLightbox('storyboards/5.jpg')">
-                    <img src="storyboards/5.jpeg" alt="Storyboard 5" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=Storyboard+5'">
-                </div>
-            </div>
-        </section>
-
-        <!-- Project 7 & Interactive 3-Page Reader for Double Crossed Comic -->
+        <!-- Double Crossed Comic with Smaller Controlled Reader View -->
         <section id="comic">
-            <div class="section-header">
-                <h2>7. Double Crossed (Comic Book)[cite: 10]</h2>
-                <div class="line"></div>
-            </div>
-            <p style="color: var(--text-muted); margin-bottom: 1.5rem; max-width: 900px;">
-                A published collaborative digital comic book featuring expressive character designs, detailed panel layouts, and digital visual storytelling using Ibis Paint, Photoshop, and Webtoon[cite: 10]. 
-                <a href="https://m.webtoons.com/en/canvas/double-crossed/list?title_no=977852" target="_blank" class="external-link" style="margin-left: 0.5rem;"><i class="fas fa-book-open"></i> Read on Webtoon[cite: 10]</a>
-            </p>
-            
-            <div class="comic-container">
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Viewing 3 pages side-by-side. Use buttons or arrow keys to flip pages.</p>
-                
-                <div class="comic-viewer-multi">
-                    <div class="comic-page-slot">
-                        <img id="comic-p1" src="double_crossed/behance_img_1.jpg" onclick="openLightbox(this.src)" alt="Page 1">
+            <h2 class="section-title"><i class="fas fa-book-open"></i> 7. Double Crossed (Comic Book)[cite: 10]</h2>
+            <div class="comic-box">
+                <p style="color: var(--text-muted); font-size: 0.88rem; text-align: center;">
+                    A published collaborative digital comic book featuring character designs, panel layouts, and visual storytelling[cite: 10].
+                    <a href="https://m.webtoons.com/en/canvas/double-crossed/list?title_no=977852" target="_blank" class="p-link" style="margin-left: 0.5rem;"><i class="fas fa-external-link-alt"></i> Webtoon Canvas[cite: 10]</a>
+                </p>
+
+                <!-- Scaled down comic view -->
+                <div class="comic-viewer-small">
+                    <div class="comic-slot">
+                        <img id="cp1" src="double_crossed/behance_img_1.jpg" onclick="openLightbox(this.src)" alt="Page 1">
                     </div>
-                    <div class="comic-page-slot">
-                        <img id="comic-p2" src="double_crossed/behance_img_2.jpg" onclick="openLightbox(this.src)" alt="Page 2">
+                    <div class="comic-slot">
+                        <img id="cp2" src="double_crossed/behance_img_2.jpg" onclick="openLightbox(this.src)" alt="Page 2">
                     </div>
-                    <div class="comic-page-slot">
-                        <img id="comic-p3" src="double_crossed/behance_img_3.jpg" onclick="openLightbox(this.src)" alt="Page 3">
+                    <div class="comic-slot">
+                        <img id="cp3" src="double_crossed/behance_img_3.jpg" onclick="openLightbox(this.src)" alt="Page 3">
                     </div>
                 </div>
 
-                <div class="comic-controls">
-                    <button class="btn btn-outline" onclick="changeComicPages(-3)"><i class="fas fa-chevron-left"></i> Previous Pages</button>
-                    <span class="page-counter" id="page-display">Pages 1 - 3 / 52</span>
-                    <button class="btn btn-outline" onclick="changeComicPages(3)">Next Pages <i class="fas fa-chevron-right"></i></button>
+                <div class="comic-nav">
+                    <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.78rem;" onclick="changePages(-3)"><i class="fas fa-chevron-left"></i> Prev</button>
+                    <span class="comic-page-num" id="page-txt">Pages 1 - 3 / 52</span>
+                    <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.78rem;" onclick="changePages(3)">Next <i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- 3D Work & Trailers Section -->
-        <section id="3d-work">
-            <div class="section-header">
-                <h2>Digital Sketches • Digital Art • 3D Modelling[cite: 10]</h2>
-                <div class="line"></div>
+        <!-- Storyboards -->
+        <section id="storyboards">
+            <h2 class="section-title"><i class="fas fa-images"></i> Storyboards & Visual Planning[cite: 10]</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('storyboards/1.jpg')">
+                    <img src="storyboards/1.jpg" alt="Board 1" onerror="this.src='https://via.placeholder.com/200x140?text=Board+1'">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('storyboards/2.jpg')">
+                    <img src="storyboards/2.jpg" alt="Board 2" onerror="this.src='https://via.placeholder.com/200x140?text=Board+2'">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('storyboards/3.jpg')">
+                    <img src="storyboards/3.jpg" alt="Board 3" onerror="this.src='https://via.placeholder.com/200x140?text=Board+3'">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('storyboards/4.jpg')">
+                    <img src="storyboards/4.jpg" alt="Board 4" onerror="this.src='https://via.placeholder.com/200x140?text=Board+4'">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('storyboards/5.jpg')">
+                    <img src="storyboards/5.jpg" alt="Board 5" onerror="this.src='https://via.placeholder.com/200x140?text=Board+5'">
+                </div>
             </div>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">
-                All other technical and creative work, including Unfold game storyboards, environment settings, UI concepts, game trailers, VR interactive projects, Unity game builds, digital sketches, and Blender 3D modeling work[cite: 10].
+        </section>
+
+        <!-- 3D Art & Trailers -->
+        <section id="art3d">
+            <h2 class="section-title"><i class="fas fa-cube"></i> Digital Sketches • Digital Art • 3D Modelling[cite: 10]</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem;">
+                3D modeling, environmental settings, UI concept designs, Blender visual renders, and trailers[cite: 10]. Full portfolio at <a href="https://behance.net/aasiakhalid" target="_blank" class="p-link">behance.net/aasiakhalid[cite: 10]</a>.
             </p>
             
-            <h3 style="margin-bottom: 1rem; color: var(--text-muted); font-size: 1.1rem;">3D Renderings & Visual Assets[cite: 10]</h3>
-            <div class="renders-grid">
-                <div class="render-card" onclick="openLightbox('3D/1.png')">
-                    <img src="3D/1.jpg" alt="Render 1" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=3D+Render+1'">
+            <div class="gallery-grid" style="margin-bottom: 1.5rem;">
+                <div class="gallery-item" onclick="openLightbox('3D/1.png')">
+                    <img src="3D/1.png" alt="Render 1" onerror="this.src='https://via.placeholder.com/200x140?text=3D+Render+1'">
                 </div>
-                <div class="render-card" onclick="openLightbox('3D/2.png')">
-                    <img src="3D/2.png" alt="Render 2" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=3D+Render+2'">
+                <div class="gallery-item" onclick="openLightbox('3D/2.png')">
+                    <img src="3D/2.png" alt="Render 2" onerror="this.src='https://via.placeholder.com/200x140?text=3D+Render+2'">
                 </div>
-                <div class="render-card" onclick="openLightbox('3D/3.png')">
-                    <img src="3D/3.png" alt="Render 3" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=3D+Render+3'">
+                <div class="gallery-item" onclick="openLightbox('3D/3.png')">
+                    <img src="3D/3.png" alt="Render 3" onerror="this.src='https://via.placeholder.com/200x140?text=3D+Render+3'">
                 </div>
-                <div class="render-card" onclick="openLightbox('3D/4.png')">
-                    <img src="3D/4.png" alt="Render 4" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=3D+Render+4'">
+                <div class="gallery-item" onclick="openLightbox('3D/4.png')">
+                    <img src="3D/4.png" alt="Render 4" onerror="this.src='https://via.placeholder.com/200x140?text=3D+Render+4'">
                 </div>
-                <div class="render-card" onclick="openLightbox('3D/5.png')">
-                    <img src="3D/5.png" alt="Render 5" loading="lazy" onerror="this.src='https://via.placeholder.com/300x200?text=3D+Render+5'">
+                <div class="gallery-item" onclick="openLightbox('3D/5.png')">
+                    <img src="3D/5.png" alt="Render 5" onerror="this.src='https://via.placeholder.com/200x140?text=3D+Render+5'">
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1rem; color: var(--text-muted); font-size: 1.1rem;">3D Trailers & Cinematic Demos[cite: 10]</h3>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/iWh3ratuols" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">Robber Cinematic Trailer</h3>
-                        <p class="project-desc">3D character animation and cinematic lighting created in Blender for game promotional trailer.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Blender 3D[cite: 10]</span>
-                            <span class="tag">Cinematics</span>
-                            <span class="tag">Animation</span>
-                        </div>
+                        <p class="project-text">3D character animation and cinematic lighting created in Blender for game promotional trailer.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="video-wrapper">
+                    <div class="media-container">
                         <iframe src="https://www.youtube.com/embed/S5nBmtSnZK4" allowfullscreen></iframe>
                     </div>
-                    <div class="project-info">
+                    <div class="project-content">
                         <h3 class="project-title">Unfold Cinematic Story Trailer</h3>
-                        <p class="project-desc">High-quality 3D cinematic cutscene trailer for Unfold game story intro.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Blender[cite: 10]</span>
-                            <span class="tag">Storytelling[cite: 10]</span>
-                            <span class="tag">3D Trailers[cite: 10]</span>
-                        </div>
+                        <p class="project-text">High-quality 3D cinematic cutscene trailer for Unfold game story intro.</p>
                     </div>
                 </div>
             </div>
@@ -943,77 +828,67 @@
 
     </div>
 
-    <!-- Image Lightbox Modal -->
+    <!-- Modal Lightbox -->
     <div id="lightbox" class="modal" onclick="closeLightbox()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="lightbox-img">
+        <img class="modal-img" id="lightbox-img">
     </div>
 
     <footer>
-        <p>&copy; 2026 Aasia Khalid. All rights reserved[cite: 9].</p>
+        <div class="container">
+            <p>&copy; 2026 Aasia Khalid. All rights reserved[cite: 9].</p>
+        </div>
     </footer>
 
-    <!-- Scripts -->
     <script>
-        // 3-Page Comic Reader Script
-        let startPage = 1;
-        const totalComicPages = 52;
+        // Comic Reader Script
+        let currentPage = 1;
+        const totalPages = 52;
 
-        function updateComicPages() {
-            const p1 = document.getElementById('comic-p1');
-            const p2 = document.getElementById('comic-p2');
-            const p3 = document.getElementById('comic-p3');
-            const pageDisplay = document.getElementById('page-display');
+        function updateComic() {
+            const p1 = document.getElementById('cp1');
+            const p2 = document.getElementById('cp2');
+            const p3 = document.getElementById('cp3');
+            const txt = document.getElementById('page-txt');
 
-            p1.src = `double_crossed/behance_img_${startPage}.jpg`;
+            p1.src = `double_crossed/behance_img_${currentPage}.jpg`;
             
-            if (startPage + 1 <= totalComicPages) {
-                p2.src = `double_crossed/behance_img_${startPage + 1}.jpg`;
+            if (currentPage + 1 <= totalPages) {
+                p2.src = `double_crossed/behance_img_${currentPage + 1}.jpg`;
                 p2.parentElement.style.visibility = 'visible';
             } else {
                 p2.parentElement.style.visibility = 'hidden';
             }
 
-            if (startPage + 2 <= totalComicPages) {
-                p3.src = `double_crossed/behance_img_${startPage + 2}.jpg`;
+            if (currentPage + 2 <= totalPages) {
+                p3.src = `double_crossed/behance_img_${currentPage + 2}.jpg`;
                 p3.parentElement.style.visibility = 'visible';
             } else {
                 p3.parentElement.style.visibility = 'hidden';
             }
 
-            const endPage = Math.min(startPage + 2, totalComicPages);
-            pageDisplay.textContent = `Pages ${startPage} - ${endPage} / ${totalComicPages}`;
+            const lastVisible = Math.min(currentPage + 2, totalPages);
+            txt.textContent = `Pages ${currentPage} - ${lastVisible} / ${totalPages}`;
         }
 
-        function changeComicPages(offset) {
-            startPage += offset;
-            if (startPage < 1) startPage = 1;
-            if (startPage > totalComicPages) startPage = totalComicPages - 2;
-            updateComicPages();
+        function changePages(offset) {
+            currentPage += offset;
+            if (currentPage < 1) currentPage = 1;
+            if (currentPage > totalPages) currentPage = totalPages - 2;
+            updateComic();
         }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowLeft') {
-                changeComicPages(-3);
-            } else if (event.key === 'ArrowRight') {
-                changeComicPages(3);
-            }
-        });
-
-        // Lightbox Functions
-        function openLightbox(imageSrc) {
+        function openLightbox(src) {
             const modal = document.getElementById('lightbox');
-            const modalImg = document.getElementById('lightbox-img');
+            const img = document.getElementById('lightbox-img');
             modal.style.display = 'flex';
-            modalImg.src = imageSrc;
+            img.src = src;
         }
 
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        // Initialize comic pages on load
-        updateComicPages();
+        updateComic();
     </script>
 </body>
 </html>
